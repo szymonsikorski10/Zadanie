@@ -1,3 +1,50 @@
+--Utworzenie tabel
+CREATE TABLE IF NOT EXISTS dostawca_a (
+  id_wiersza TEXT, 
+	id_odczytu TEXT, 
+	kod_oddzialu TEXT, 
+	okres TEXT, 
+  zuzycie TEXT, 
+	jednostka TEXT, 
+	wersja TEXT, 
+	data_otrzymania TEXT
+);
+
+CREATE TABLE IF NOT EXISTS dostawca_b (
+  row_id TEXT, 
+	reading_id TEXT, 
+	branch_code TEXT, 
+	period TEXT, 
+  energy_value TEXT, 
+	energy_unit TEXT, 
+	revision_no TEXT, 
+	recieved_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS lokalizacje (
+  kod_lok TEXT, 
+	nazwa TEXT, 
+	aktywny_od TEXT, 
+	aktywny_do TEXT
+);
+
+CREATE TABLE IF NOT EXISTS historia_zmian (
+  id_zmiany TEXT, 
+	kod_lok TEXT, 
+	miesiac TEXT, 
+	typ TEXT, 
+  wartosc_kwh TEXT, 
+	data_zmiany TEXT, 
+	opis TEXT
+);
+
+CREATE TABLE IF NOT EXISTS raport_poprzedni (
+  kod_lok TEXT, 
+	miesiac TEXT, 
+	zuzycie_kwh TEXT
+);
+
+
 --Sprawdzenie jednostek
 SELECT id_wiersza, kod_oddzialu, okres, zuzycie, jednostka 
 FROM dostawca_a 
