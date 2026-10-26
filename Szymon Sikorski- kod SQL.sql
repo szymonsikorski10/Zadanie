@@ -63,7 +63,7 @@ HAVING COUNT(*) > 1;
 
 --Sprawdzenie oddziałów ze starego raportu, których nie ma w tabeli lokalizacji
 SELECT DISTINCT r.kod_lok
-FROM raport_poprzedni r
+FROM raport_poprzedni AS r
 LEFT JOIN lokalizacje l ON r.kod_lok = l.kod_lok
 WHERE l.kod_lok IS NULL;
 
